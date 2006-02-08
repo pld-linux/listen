@@ -1,5 +1,5 @@
-# $Revision: 1.3 $Date: 2006-02-08 18:52:58 $
-Summary:	Future rich media player for GNOME
+# $Revision: 1.4 $Date: 2006-02-08 23:53:08 $
+Summary:	Feature rich media player for GNOME
 Summary(pl):	Pe³nowarto¶ciowy odtwarzacz dla GNOME
 Name:		listen
 Version:	0.2.1
@@ -55,7 +55,7 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc changelog
-%attr(755,root,root) %{_bindir}/listen
+%attr(755,root,root) %{_bindir}/%{name}
 %dir %{_libdir}/%{name}
 %{_libdir}/%{name}/*
 %{_desktopdir}/*
