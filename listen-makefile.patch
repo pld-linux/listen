@@ -1,0 +1,81 @@
+diff -urN listen-0.2.1.orig/Makefile listen-0.2.1/Makefile
+--- listen-0.2.1.orig/Makefile	2006-02-08 01:29:46.000000000 +0100
++++ listen-0.2.1/Makefile	2006-02-08 11:35:26.956869250 +0100
+@@ -1,10 +1,10 @@
+ 
+ 
+ PO = fr it es hu
+-PREFIX ?= /usr/local
++PREFIX ?= /usr
+ 
+ 
+-all: check mmkeys.so po-data
++all: mmkeys.so po-data
+ 	@echo "Done"
+ 	@echo "Type: make install now"
+ 
+diff -urN listen-0.2.1.orig/Makefile~ listen-0.2.1/Makefile~
+--- listen-0.2.1.orig/Makefile~	1970-01-01 01:00:00.000000000 +0100
++++ listen-0.2.1/Makefile~	2006-02-08 11:34:49.000000000 +0100
+@@ -0,0 +1,61 @@
++
++
++PO = fr it es hu
++#PREFIX ?= /usr$(PREFIX)
++
++
++all: mmkeys.so po-data
++	@echo "Done"
++	@echo "Type: make install now"
++
++check:
++	@/bin/echo -n "Checking for Python... "
++	@which python || ( echo "Not found." && /bin/false )
++	@./check.py
++
++mmkeys.so:
++	cd mmkeys && make mmkeys.so && cd ..
++	cp mmkeys/mmkeys.so src/mmkeys.so
++
++clean:
++	find . -type f -iregex '.*~$$'  -print | xargs rm -rf
++	find . -type d -iregex '.*\.svn$$'  -print | xargs rm -rf
++	find . -type f -iregex '.*\.pyc$$'  -print | xargs rm -rf
++	rm src/*.so -f
++	rm .project -f
++	cd mmkeys && make clean && cd ..
++
++make-install-dirs: make-install-dirs-po
++	mkdir -p $(DESTDIR)$(PREFIX)/bin
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/listen/images
++	mkdir -p $(DESTDIR)$(PREFIX)/lib/listen/mutagen
++	mkdir -p $(DESTDIR)$(PREFIX)/share/listen
++	mkdir -p $(DESTDIR)$(PREFIX)/share/pixmaps
++	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
++	
++make-install-dirs-po:
++	for lang in $(PO); do mkdir -p $(DESTDIR)$(PREFIX)/lib/listen/po/$$lang/LC_MESSAGES; done
++
++install: make-install-dirs install-po
++	install -m 644 src/*.py $(DESTDIR)$(PREFIX)/lib/listen
++	install -m 644 src/mmkeys.so $(DESTDIR)$(PREFIX)/lib/listen
++	install -m 644 src/mutagen/* $(DESTDIR)$(PREFIX)/lib/listen/mutagen
++	install -m 644 src/images/* $(DESTDIR)$(PREFIX)/lib/listen/images
++	install -m 644 src/images/listen.png $(DESTDIR)$(PREFIX)/share/pixmaps/
++	install -m 644 listen.desktop $(DESTDIR)$(PREFIX)/share/applications/
++	cd $(DESTDIR)$(PREFIX)/bin && \
++	ln -s ../lib/listen/listen.py listen && \
++	chmod 755 listen
++	
++install-po:
++	for lang in $(PO); do install -m 644 src/po/$$lang/LC_MESSAGES/* $(DESTDIR)$(PREFIX)/lib/listen/po/$$lang/LC_MESSAGES/; done
++
++po-dir:
++	for lang in $(PO); do mkdir -p src/po/$$lang/LC_MESSAGES/ ;done
++	
++po-data: po-dir
++	for lang in $(PO); do msgfmt src/po/$$lang.po -o src/po/$$lang/LC_MESSAGES/listen.mo;done
++	
++po-gen:
++	xgettext -k_ -kN_ -o src/po/messages.pot src/*.py
++	for lang in $(PO); do msgmerge -U src/po/$$lang.po src/po/messages.pot; done
