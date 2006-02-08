@@ -1,4 +1,4 @@
-# $Revision: 1.1 $Date: 2006-02-08 14:04:16 $
+# $Revision: 1.2 $Date: 2006-02-08 15:21:48 $
 #
 Summary:	Future rich media player for GNOME
 Summary(pl):	Pe³nowarto¶ciowy odtwarzacz dla GNOME
@@ -19,6 +19,7 @@ BuildRequires:	python-pygtk-devel
 Requires:	python >= 2.3
 Requires:	python-Imaging
 Requires:	python-gnome-extras-egg
+Requires:	python-gnome-extras-gtkhtml
 Requires:	python-gstreamer >= 0.8.2
 Requires:	python-mad
 Requires:	python-pygtk-gtk >= 2:2.6.0
