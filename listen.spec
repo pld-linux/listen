@@ -1,5 +1,4 @@
-# $Revision: 1.2 $Date: 2006-02-08 15:21:48 $
-#
+# $Revision: 1.3 $Date: 2006-02-08 18:52:58 $
 Summary:	Future rich media player for GNOME
 Summary(pl):	Pe³nowarto¶ciowy odtwarzacz dla GNOME
 Name:		listen
@@ -14,9 +13,9 @@ Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://listengnome.free.fr/
 BuildRequires:	gtk+2-devel >= 2:2.6.0
-BuildRequires:	python-devel
-BuildRequires:	python-pygtk-devel
-Requires:	python >= 2.3
+BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-pygtk-devel >= 2:2.6.0
+Requires:	python >= 1:2.3
 Requires:	python-Imaging
 Requires:	python-gnome-extras-egg
 Requires:	python-gnome-extras-gtkhtml
