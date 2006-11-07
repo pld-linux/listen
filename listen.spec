@@ -1,4 +1,4 @@
-# $Revision: 1.4 $Date: 2006-02-08 23:53:08 $
+# $Revision: 1.5 $Date: 2006-11-07 22:29:01 $
 Summary:	Feature rich media player for GNOME
 Summary(pl):	Pe³nowarto¶ciowy odtwarzacz dla GNOME
 Name:		listen
@@ -58,5 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}
 %dir %{_libdir}/%{name}
 %{_libdir}/%{name}/*
-%{_desktopdir}/*
+%{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
