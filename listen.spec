@@ -1,6 +1,6 @@
-# $Revision: 1.5 $Date: 2006-11-07 22:29:01 $
+# $Revision: 1.6 $Date: 2007-02-12 00:49:06 $
 Summary:	Feature rich media player for GNOME
-Summary(pl):	Pe³nowarto¶ciowy odtwarzacz dla GNOME
+Summary(pl.UTF-8):   PeÅ‚nowartoÅ›ciowy odtwarzacz dla GNOME
 Name:		listen
 Version:	0.2.1
 Release:	0.1
@@ -29,8 +29,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Listen is a Music player and management for GNOME.
 
-%description -l pl
-Listen jest odtwarzaczem i zarz±dc± muzyki dla GNOME.
+%description -l pl.UTF-8
+Listen jest odtwarzaczem i zarzÄ…dcÄ… muzyki dla GNOME.
 
 %prep
 %setup -q
