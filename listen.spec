@@ -1,6 +1,6 @@
-# $Revision: 1.6 $Date: 2007-02-12 00:49:06 $
+# $Revision: 1.7 $Date: 2007-02-13 06:46:52 $
 Summary:	Feature rich media player for GNOME
-Summary(pl.UTF-8):   Pełnowartościowy odtwarzacz dla GNOME
+Summary(pl.UTF-8):	Pełnowartościowy odtwarzacz dla GNOME
 Name:		listen
 Version:	0.2.1
 Release:	0.1
