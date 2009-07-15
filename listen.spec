@@ -1,17 +1,17 @@
-# $Revision: 1.7 $Date: 2007-02-13 06:46:52 $
+# $Revision: 1.8 $Date: 2009-07-15 20:58:19 $
 Summary:	Feature rich media player for GNOME
 Summary(pl.UTF-8):	Pełnowartościowy odtwarzacz dla GNOME
 Name:		listen
-Version:	0.2.1
+Version:	0.6.2
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Sound
-Source0:	http://listengnome.free.fr/packages/src/%{name}-%{version}.tar.gz
-# Source0-md5:	67a755437a3c3db2d7640fdc959a7419
+Source0:	http://download.listen-project.org/lastest/%{name}-0.6.2.tar.gz
+# Source0-md5:	d5b039a1679246ab6224a4aefe16e1be
 Source1:	%{name}
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-desktop.patch
-URL:		http://listengnome.free.fr/
+URL:		http://www.listen-project.org/
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
@@ -34,8 +34,8 @@ Listen jest odtwarzaczem i zarządcą muzyki dla GNOME.
 
 %prep
 %setup -q
-%patch0 -p1
-%patch1 -p1
+# %patch0 -p1
+# %patch1 -p1
 
 %build
 %{__make}
