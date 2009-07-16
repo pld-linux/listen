@@ -1,4 +1,4 @@
-# $Revision: 1.10 $Date: 2009-07-16 09:13:13 $
+# $Revision: 1.11 $Date: 2009-07-16 10:56:43 $
 # TODO:
 # - Listen require pyinotify (http://pyinotify.sourceforge.net/)
 Summary:	Feature rich media player for GNOME
@@ -16,17 +16,19 @@ BuildRequires:	python-dbus
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-gstreamer-devel
 BuildRequires:	python-mutagen
-BuildRequires:	python-pynotify-devel
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
+BuildRequires:	python-pynotify-devel
 BuildRequires:	python-pywebkitgtk-devel
+Requires:	notification-daemon
 Requires:	python >= 1:2.3
-# Requires:	python-Imaging
 Requires:	python-gnome-extras-egg
 Requires:	python-gnome-extras-gtkhtml
+Requires:	python-gpod
 Requires:	python-gstreamer >= 0.8.2
 Requires:	python-mad
 Requires:	python-pygtk-gtk >= 2:2.6.0
 Requires:	python-pyvorbis
+Requires:	python-pywebkitgtk
 Requires:	python-pyxdg
 Requires:	python-sqlite
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
