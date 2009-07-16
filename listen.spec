@@ -1,6 +1,7 @@
-# $Revision: 1.11 $Date: 2009-07-16 10:56:43 $
+# $Revision: 1.12 $Date: 2009-07-16 11:59:37 $
 # TODO:
-# - Listen require pyinotify (http://pyinotify.sourceforge.net/)
+# - WARNING  listen.player.fadebin.StreamBin     stream "file:///...." already blocked
+# - not plays, maybe because of the warning above
 Summary:	Feature rich media player for GNOME
 Summary(pl.UTF-8):	Pełnowartościowy odtwarzacz dla GNOME
 Name:		listen
