@@ -1,4 +1,4 @@
-# $Revision: 1.8 $Date: 2009-07-15 20:58:19 $
+# $Revision: 1.9 $Date: 2009-07-16 08:26:32 $
 Summary:	Feature rich media player for GNOME
 Summary(pl.UTF-8):	Pełnowartościowy odtwarzacz dla GNOME
 Name:		listen
@@ -6,15 +6,19 @@ Version:	0.6.2
 Release:	0.1
 License:	GPL v2
 Group:		X11/Applications/Sound
-Source0:	http://download.listen-project.org/lastest/%{name}-0.6.2.tar.gz
+Source0:	http://download.listen-project.org/lastest/%{name}-%{version}.tar.gz
 # Source0-md5:	d5b039a1679246ab6224a4aefe16e1be
 Source1:	%{name}
 Patch0:		%{name}-makefile.patch
 Patch1:		%{name}-desktop.patch
 URL:		http://www.listen-project.org/
 BuildRequires:	gtk+2-devel >= 2:2.6.0
+BuildRequires:	python-dbus
 BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-gstreamer-devel
+BuildRequires:	python-mutagen
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
+BuildRequires:	python-pywebkitgtk-devel
 Requires:	python >= 1:2.3
 Requires:	python-Imaging
 Requires:	python-gnome-extras-egg
@@ -49,14 +53,18 @@ install -d $RPM_BUILD_ROOT%{_bindir}
 
 install -c %{SOURCE1} $RPM_BUILD_ROOT%{_bindir}
 
+%find_lang %{name} --with-gnome
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files
+%files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc changelog
 %attr(755,root,root) %{_bindir}/%{name}
 %dir %{_libdir}/%{name}
+%{_datadir}/listen
 %{_libdir}/%{name}/*
 %{_desktopdir}/*.desktop
 %{_pixmapsdir}/*
+%{_datadir}/dbus-1/services/org.gnome.Listen.service
+%{_mandir}/man1/listen.1
