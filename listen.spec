@@ -1,4 +1,3 @@
-# $Revision: 1.12 $Date: 2009-07-16 11:59:37 $
 # TODO:
 # - WARNING  listen.player.fadebin.StreamBin     stream "file:///...." already blocked
 # - not plays, maybe because of the warning above
