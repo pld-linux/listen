@@ -4,12 +4,12 @@
 Summary:	Feature rich media player for GNOME
 Summary(pl.UTF-8):	Pełnowartościowy odtwarzacz dla GNOME
 Name:		listen
-Version:	0.6.2
+Version:	0.6.5
 Release:	0.2
 License:	GPL v2
 Group:		X11/Applications/Sound
 Source0:	http://download.listen-project.org/lastest/%{name}-%{version}.tar.gz
-# Source0-md5:	d5b039a1679246ab6224a4aefe16e1be
+# Source0-md5:	76cd9ad2fc9c600dbdf4808c15aeccf1
 URL:		http://www.listen-project.org/
 BuildRequires:	gtk+2-devel >= 2:2.6.0
 BuildRequires:	python-dbus
@@ -19,6 +19,7 @@ BuildRequires:	python-mutagen
 BuildRequires:	python-pygtk-devel >= 2:2.6.0
 BuildRequires:	python-pynotify-devel
 BuildRequires:	python-pywebkitgtk-devel
+BuildRequires:	python-Xlib
 Requires:	notification-daemon
 Requires:	python >= 1:2.3
 Requires:	python-gnome-extras-egg
